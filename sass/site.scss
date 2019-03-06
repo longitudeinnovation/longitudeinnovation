@@ -1,10 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400|Montserrat);
+
+$font-family-serif-merriweather: Merriweather, Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif-montserrat: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+$font-family-base: $font-family-sans-serif-montserrat !default;
+
+$color-green: rgb(87, 156, 135);
+$color-white: rgb(255, 255, 255);
+
+// $theme-colors: (
+//   "primary": $color-red,
+// );
+
 @import "node_modules/bootstrap/scss/bootstrap";
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-serif-merriweather;
+}
+
+
 
 .masthead {
     height: 100vh;
     min-height: 500px;
-    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background: 
+    // linear-gradient(
+    //     rgba($color-red, 0.05), 
+    //     rgba($color-red, 0.05)
+    //   ),
+        url('https://source.unsplash.com/X9fdmlGEo4Y/1920x1080');
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+.highlight {
+    background-color: rgba($color-green, 0.25);
+    color: $color-white;
+    padding: 0.25rem 0.75rem; 
+}
+
+.mw-720 {
+    max-width: 720px;
+}
+
+.excerpt {
+    background-color: rgba($color-green, 0.25);
+    padding: 3em;
+    blockquote {
+        margin: 0;
+    }
+    blockquote:before,
+    blockquote:after {
+        position: absolute;
+        color: rgba($color-green, 0.35);;
+        font-size: 8rem;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    blockquote:before {
+        content: '“';
+        left: -3rem;
+        top: -3rem;
+    }
+
+    blockquote:after {
+        content: '”';
+        right: -3rem;
+        bottom: 3rem;
+    }
+
+    .blockquote-footer {
+        opacity: 0.5;
+        padding-top: 1em;
+        &::before {
+            content: "";
+        }
+    }
 }
